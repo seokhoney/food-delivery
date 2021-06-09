@@ -97,7 +97,7 @@
 
 ### 바운디드 컨텍스트로 묶기
 
-![image](https://user-images.githubusercontent.com/84000863/121385311-f861f480-c983-11eb-861a-ed80435e474e.png)
+![image](https://user-images.githubusercontent.com/84000863/121385407-0b74c480-c984-11eb-9f4a-53137a4601af.png)
 
     - 도메인 서열 분리 
         - Core Domain:  app(front), book, store : 없어서는 안될 핵심 서비스이며, 연견 Up-time SLA 수준을 99.999% 목표, 배포주기는 app, book, store 의 경우 1주일 1회 미만
@@ -105,11 +105,11 @@
 
 ### 폴리시 부착 (괄호는 수행주체, 폴리시 부착을 둘째단계에서 해놔도 상관 없음. 전체 연계가 초기에 드러남)
 
-![image](https://user-images.githubusercontent.com/84000863/121380902-3c52fa80-c980-11eb-9cf2-ed72f7cb2cfd.png)
+![image](https://user-images.githubusercontent.com/84000863/121385551-2cd5b080-c984-11eb-8430-77f6e06d9581.png)
 
 ### 폴리시의 이동과 컨텍스트 매핑 (점선은 Pub/Sub, 실선은 Req/Resp)
 
-![image](https://user-images.githubusercontent.com/84000863/121383313-5261ba80-c982-11eb-89f8-3aaea5848dd3.png)
+![image](https://user-images.githubusercontent.com/84000863/121385799-64dcf380-c984-11eb-8db6-a7a2337ebd24.png)
 
 ### 완성된 1차 모형
 
