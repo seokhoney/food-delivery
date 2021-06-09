@@ -155,42 +155,42 @@
 
 # 구현:
 
-분석/설계 단계에서 도출된 헥사고날 아키텍처에 따라, 각 BC별로 대변되는 마이크로 서비스들을 스프링부트와 파이선으로 구현하였다. 구현한 각 서비스를 로컬에서 실행하는 방법은 아래와 같다 (각자의 포트넘버는 8081 ~ 808n 이다)
+구현한 각 서비스를 로컬에서 실행하는 방법은 아래와 같다 (각자의 포트넘버는 8081 ~ 808n 이다)
 
 ```
-cd app
+cd product
 mvn spring-boot:run
 
-cd pay
+cd booking
 mvn spring-boot:run 
 
 cd store
 mvn spring-boot:run  
 
-cd customer
-python policy-handler.py 
 ```
 
 ## DDD 의 적용
 
-- 각 서비스내에 도출된 핵심 Aggregate Root 객체를 Entity 로 선언하였다: (예시는 pay 마이크로 서비스). 이때 가능한 현업에서 사용하는 언어 (유비쿼터스 랭귀지)를 그대로 사용하려고 노력했다. 하지만, 일부 구현에 있어서 영문이 아닌 경우는 실행이 불가능한 경우가 있기 때문에 계속 사용할 방법은 아닌것 같다. (Maven pom.xml, Kafka의 topic id, FeignClient 의 서비스 id 등은 한글로 식별자를 사용하는 경우 오류가 발생하는 것을 확인하였다)
+- 각 서비스내에 도출된 핵심 Aggregate Root 객체를 Entity 로 선언하였다. 아래 Product가 그 예시이다.
 
 ```
-package fooddelivery;
+package carrent;
 
 import javax.persistence.*;
 import org.springframework.beans.BeanUtils;
 import java.util.List;
+import java.util.Date;
 
 @Entity
-@Table(name="결제이력_table")
-public class 결제이력 {
+@Table(name="Product_table")
+public class Product {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private String orderId;
-    private Double 금액;
+    private String name;
+    private Integer stock;
+    private Long productId;
 
     public Long getId() {
         return id;
@@ -199,19 +199,26 @@ public class 결제이력 {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getOrderId() {
-        return orderId;
+    public String getName() {
+        return name;
     }
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
+    public void setName(String name) {
+        this.name = name;
     }
-    public Double get금액() {
-        return 금액;
+    public Integer getStock() {
+        return stock;
     }
 
-    public void set금액(Double 금액) {
-        this.금액 = 금액;
+    public void setStock(Integer stock) {
+        this.stock = stock;
+    }
+    public Long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 
 }
@@ -219,23 +226,24 @@ public class 결제이력 {
 ```
 - Entity Pattern 과 Repository Pattern 을 적용하여 JPA 를 통하여 다양한 데이터소스 유형 (RDB or NoSQL) 에 대한 별도의 처리가 없도록 데이터 접근 어댑터를 자동 생성하기 위하여 Spring Data REST 의 RestRepository 를 적용하였다
 ```
-package fooddelivery;
+package carrent;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-public interface 결제이력Repository extends PagingAndSortingRepository<결제이력, Long>{
+@RepositoryRestResource(collectionResourceRel="products", path="products")
+public interface ProductRepository extends PagingAndSortingRepository<Product, Long>{
+    Product findByProductId(Long productId);
+
 }
 ```
 - 적용 후 REST API 의 테스트
 ```
-# app 서비스의 주문처리
-http localhost:8081/orders item="통닭"
-
-# store 서비스의 배달처리
-http localhost:8083/주문처리s orderId=1
+# booking 서비스의 예약처리
+http POST http://localhost:8084/bookings qty=1 startDate=2021-07-01 endDate=2021-07-03 productId=1
 
 # 주문 상태 확인
-http localhost:8081/orders/1
+http GET http://localhost:8084/bookings
 
 ```
 
