@@ -82,7 +82,7 @@
 ![image](https://user-images.githubusercontent.com/84000863/121367196-11af7480-c975-11eb-9cc9-2b3a693f1ec5.png)
 
 ### 부적격 이벤트 탈락
-![image](https://user-images.githubusercontent.com/84000863/121367156-08260c80-c975-11eb-9782-5dd1fb7e99a8.png)
+![image](https://user-images.githubusercontent.com/84000863/121383421-6a393e80-c982-11eb-8dab-0e7e60b1cacc.png)
 
     - 과정중 도출된 잘못된 도메인 이벤트들을 걸러내는 작업을 수행함
         - 예약내역 조회됨 :  UI 의 이벤트이지, 업무적인 의미의 이벤트가 아니라서 제외
@@ -109,7 +109,7 @@
 
 ### 폴리시의 이동과 컨텍스트 매핑 (점선은 Pub/Sub, 실선은 Req/Resp)
 
-![image](https://user-images.githubusercontent.com/84000863/121380959-47a62600-c980-11eb-8eb0-e6edfeb8eadb.png)
+![image](https://user-images.githubusercontent.com/84000863/121383313-5261ba80-c982-11eb-89f8-3aaea5848dd3.png)
 
 ### 완성된 1차 모형
 
