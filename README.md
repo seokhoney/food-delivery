@@ -93,14 +93,14 @@
 ### 어그리게잇으로 묶기
 ![image](https://user-images.githubusercontent.com/84000863/121385028-bafd6700-c983-11eb-9b9d-26ccaaf47ec5.png)
 
-    - app의 product, book의 상품과 예약, store의 업체는 그와 연결된 command 와 event 들에 의하여 트랜잭션이 유지되어야 하는 단위로 그들 끼리 묶어줌
+    - product, book의 상품과 예약, store의 업체는 그와 연결된 command 와 event 들에 의하여 트랜잭션이 유지되어야 하는 단위로 그들 끼리 묶어줌
 
 ### 바운디드 컨텍스트로 묶기
 
 ![image](https://user-images.githubusercontent.com/84000863/121385407-0b74c480-c984-11eb-9f4a-53137a4601af.png)
 
     - 도메인 서열 분리 
-        - Core Domain:  app(front), book, store : 없어서는 안될 핵심 서비스이며, 연견 Up-time SLA 수준을 99.999% 목표, 배포주기는 app, book, store 의 경우 1주일 1회 미만
+        - Core Domain:  product, book, store : 없어서는 안될 핵심 서비스이며, 연견 Up-time SLA 수준을 99.999% 목표, 배포주기는 app, book, store 의 경우 1주일 1회 미만
         - Supporting Domain:  -- : 경쟁력을 내기위한 서비스이며, SLA 수준은 연간 60% 이상 uptime 목표, 배포주기는 각 팀의 자율이나 표준 스프린트 주기가 1주일 이므로 1주일 1회 이상을 기준으로 함.
 
 ### 폴리시 부착 (괄호는 수행주체, 폴리시 부착을 둘째단계에서 해놔도 상관 없음. 전체 연계가 초기에 드러남)
