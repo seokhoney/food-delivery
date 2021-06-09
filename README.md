@@ -128,6 +128,7 @@
     - 차량을 준비 후, 렌트되면 대여 불가한 상태로 변경된다. (ok)
 
 ![image](https://user-images.githubusercontent.com/84000863/121389124-0cf3bc00-c987-11eb-9c44-c437bda469c6.png)
+
     - 고객이 주문을 취소할 수 있다 (ok)
     - 고객이 차량을 반납하면 대여 가능한 상태로 변경된다. (ok)
     - 고객이 예약정보를 중간중간 조회한다. (View-green sticker 의 추가로 ok) 
