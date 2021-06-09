@@ -82,7 +82,7 @@
 ![image](https://user-images.githubusercontent.com/84000863/121367196-11af7480-c975-11eb-9cc9-2b3a693f1ec5.png)
 
 ### 부적격 이벤트 탈락
-![image](https://user-images.githubusercontent.com/84000863/121383421-6a393e80-c982-11eb-8dab-0e7e60b1cacc.png) 
+![image](https://user-images.githubusercontent.com/84000863/121383633-8dfc8480-c982-11eb-8e05-a111676932d6.png)
 
     - 과정중 도출된 잘못된 도메인 이벤트들을 걸러내는 작업을 수행함
         - 예약내역 조회됨 :  UI 의 이벤트이지, 업무적인 의미의 이벤트가 아니라서 제외
