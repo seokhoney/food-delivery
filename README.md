@@ -88,10 +88,10 @@
         - 예약내역 조회됨 :  UI 의 이벤트이지, 업무적인 의미의 이벤트가 아니라서 제외
 
 ### 액터, 커맨드 부착하여 읽기 좋게
-![image](https://user-images.githubusercontent.com/84000863/121380805-25140d00-c980-11eb-9420-4e7381dc19e1.png)
+![image](https://user-images.githubusercontent.com/84000863/121383698-9c4aa080-c982-11eb-9781-7fbb6a411fb4.png)
 
 ### 어그리게잇으로 묶기
-![image](https://user-images.githubusercontent.com/84000863/121380843-2cd3b180-c980-11eb-97b5-50ec9f0e5f3d.png)
+![image](https://user-images.githubusercontent.com/84000863/121383746-a4a2db80-c982-11eb-9397-e5bff94d6756.png)
 
     - app의 product, book의 상품과 예약, store의 업체는 그와 연결된 command 와 event 들에 의하여 트랜잭션이 유지되어야 하는 단위로 그들 끼리 묶어줌
 
