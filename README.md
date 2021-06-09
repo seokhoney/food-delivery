@@ -88,7 +88,7 @@
         - 예약내역 조회됨 :  UI 의 이벤트이지, 업무적인 의미의 이벤트가 아니라서 제외
 
 ### 액터, 커맨드 부착하여 읽기 좋게
-![image](https://user-images.githubusercontent.com/84000863/121383698-9c4aa080-c982-11eb-9781-7fbb6a411fb4.png)
+![image](https://user-images.githubusercontent.com/84000863/121384293-1713bb80-c983-11eb-8cf1-5b30cbfe41ee.png)
 
 ### 어그리게잇으로 묶기
 ![image](https://user-images.githubusercontent.com/84000863/121383746-a4a2db80-c982-11eb-9397-e5bff94d6756.png)
